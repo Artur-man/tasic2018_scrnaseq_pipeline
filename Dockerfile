@@ -51,3 +51,7 @@ ENV PATH /opt/conda/envs/dolphinnext-rnaseq-3.0/bin:/usr/local/bin/dolphin-tools
 
 # Add MultiQC
 RUN pip install "multiqc==1.7"
+
+# install R packages
+COPY scrnahbc.R / 
+RUN Rscript scrnahbc.R 
