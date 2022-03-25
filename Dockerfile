@@ -29,9 +29,6 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 RUN aws --version
 
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 # configure image for installing R
 RUN apt-get -y install r-base r-base-dev
 RUN apt-get -y install libcurl4-openssl-dev libssl-dev libxml2-dev 
@@ -39,6 +36,9 @@ RUN apt-get -y install pandoc
 RUN apt-get -y install texlive-base texlive-latex-base texlive-fonts-recommended
 RUN apt-get -y install libfontconfig1-dev libcairo2-dev
 RUN apt-get -y install libhdf5-dev
+
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # configure Conda
 COPY environment.yml /
