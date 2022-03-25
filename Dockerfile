@@ -1,9 +1,8 @@
 FROM ubuntu:16.04
-LABEL author="onur.yukselen@umassmed.edu"  description="Docker image containing all requirements for the dolphinnext/rnaseq pipeline"
+LABEL author="artur.manukyan@umassmed.edu"  description="Docker image containing all requirements for the dolphinnext/tasic2018_scrnaseq_pipeline"
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
-
 
 RUN apt-get update --fix-missing && \
     apt-get install -y wget bzip2 ca-certificates curl git libtbb-dev g++
@@ -33,6 +32,15 @@ RUN aws --version
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# configure image for installing R
+RUN apt-get -y install r-base r-base-dev
+RUN apt-get -y install libcurl4-openssl-dev libssl-dev libxml2-dev 
+RUN apt-get -y install pandoc
+RUN apt-get -y install texlive-base texlive-latex-base texlive-fonts-recommended
+RUN apt-get -y install libfontconfig1-dev libcairo2-dev
+RUN apt-get -y install libhdf5-dev
+
+# configure Conda
 COPY environment.yml /
 RUN conda update -n base -c defaults conda
 RUN conda env create -f /environment.yml && conda clean -a
@@ -41,5 +49,5 @@ RUN git clone https://github.com/dolphinnext/tools /usr/local/bin/dolphin-tools
 RUN mkdir -p /project /nl /mnt /share
 ENV PATH /opt/conda/envs/dolphinnext-rnaseq-3.0/bin:/usr/local/bin/dolphin-tools/:$PATH
 
+# Add MultiQC
 RUN pip install "multiqc==1.7"
-RUN cd /bin && wget https://github.com/ChristopherWilks/megadepth/releases/download/1.1.0/megadepth && chmod 777 megadepth
