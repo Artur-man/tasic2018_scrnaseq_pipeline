@@ -30,7 +30,7 @@ RUN ./aws/install
 RUN aws --version
 
 # configure image for installing R
-RUN apt-get -y install r-base r-base-dev
+# RUN apt-get -y install r-base r-base-dev
 RUN apt-get -y install libcurl4-openssl-dev libssl-dev libxml2-dev 
 RUN apt-get -y install pandoc
 RUN apt-get -y install texlive-base texlive-latex-base texlive-fonts-recommended
