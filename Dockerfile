@@ -54,4 +54,4 @@ RUN pip install "multiqc==1.7"
 
 # install R packages
 COPY r_packages.R / 
-# RUN Rscript r_packages.R 
+RUN Rscript r_packages.R 
