@@ -19,3 +19,4 @@ dependencies:
   - fastx_toolkit=0.0.14
   - bioconda::kallisto=0.46.0
   - ucsc-wigToBigWig=377
+  - bedtools=2.29.2
