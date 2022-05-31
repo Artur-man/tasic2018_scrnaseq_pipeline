@@ -43,3 +43,4 @@ ENV PATH /opt/conda/envs/dolphinnext-rnaseq-3.0/bin:/usr/local/bin/dolphin-tools
 
 COPY r_packages.R /
 RUN Rscript r_packages.R
+
