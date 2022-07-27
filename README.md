@@ -10,5 +10,13 @@ This pipeline adapted from following study: [Paper](https://www.nature.com/artic
   3. STAR is used to align RNA-Seq reads to a genome. 
   4. SummarizeOverlaps is used to calculate gene counts. 
 
+##### Program Versions:
+  - Star v2.6.1 # don't upgrade me - 2.7X indices incompatible with iGenomes.
+  - r-base=4.0.0
+  - Samtools v1.3
+  - Bedtools v2.29.2
+  - Ucsc-wigToBigWig v377
+  - Macs2 v2.1.2
+
 ##### Pipeline Container:
   * Docker: amanukyan1385/tasic2018\_scrnaseq\_pipeline:1.0
