@@ -1,4 +1,4 @@
-# scRNA-Seq (Tasic et al 2021) Pipeline
+# scRNA-Seq (Tasic et al 2018) Pipeline
 
 This single cell RNA-seq pipeline includes Quality Control, rRNA filtering, Genome Alignment using STAR and estimates gene expression levels by GenomeAlignment Package in R. 
 
