@@ -39,7 +39,7 @@ RUN conda env create -f /environment.yml && conda clean -a
 # Install dolphin-tools
 RUN git clone https://github.com/dolphinnext/tools /usr/local/bin/dolphin-tools
 RUN mkdir -p /project /nl /mnt /share
-ENV PATH /opt/conda/envs/dolphinnext-rnaseq-3.0/bin:/usr/local/bin/dolphin-tools/:$PATH
+ENV PATH /opt/conda/envs/dolphinnext-scrnaseq-1.0/bin:/usr/local/bin/dolphin-tools/:$PATH
 
 COPY r_packages.R /
 RUN Rscript r_packages.R
