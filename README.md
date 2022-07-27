@@ -19,4 +19,5 @@ This pipeline adapted from following study: [Paper](https://www.nature.com/artic
   - Macs2 v2.1.2
 
 ##### Pipeline Container:
-  * Docker: amanukyan1385/tasic2018\_scrnaseq\_pipeline:1.0
+  * Docker: dolphinnext/tasic2018\_scrnaseq\_pipeline:1.0
+  * GitHub: dolphinnext/tasic2018\_scrnaseq\_pipeline
